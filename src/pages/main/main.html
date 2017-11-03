@@ -1,53 +1,52 @@
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
     <div class="flb">
-      <div class="Aligner-item Aligner-item--top"></div>
-      <img src="assets/splash.gif">
-      <div class="Aligner-item Aligner-item--bottom"></div>
+        <div class="Aligner-item Aligner-item--top"></div>
+        <img src="assets/splash.gif">
+        <div class="Aligner-item Aligner-item--bottom"></div>
     </div>
-  </div>
+</div>
 
+<ion-header style="background-color:#3ebffb">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <img src="http://placehold.it/18x18" class=".navbar-nav>li>a.profile-image {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            } img-circle" style="font-size: 25px;"> {{this.afAuth.auth.currentUser.email}}
+        <a href="#" (click)="Logout()">Logout</a>
+
+
+    </div>
+    <span style="font-size:30px;cursor:pointer;color:white;padding: 12px 20px" (click)="openNav()">&#9776;</span>
+</ion-header>
 
 <ion-content padding>
-<ion-toggle [(ngModel)]="toggleStatus" pulsado checked="false" (ionChange)="trackNani()">  </ion-toggle>
-<button ion-button (click)="loadSideMenu()"><ion-icon name="list" ion-icon></ion-icon></button>
-<ion-buttons end>
-    <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
-</ion-buttons>
-<ion-buttons>
+
+    <!-- <ion-toggle [(ngModel)]="toggleStatus" pulsado checked="false" (ionChange)="trackNani()">  </ion-toggle> -->
+
+    <!-- <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button> -->
+    <!-- <ion-buttons>
     <button ion-button (click)="findNani()"><ion-icon name="add"></ion-icon>Find Nani</button>
-</ion-buttons>
-<div id="output"></div>
-<!-- <ion-buttons>
+</ion-buttons> -->
+    <div id="output"></div>
+    <!-- <ion-buttons>
         <button ion-button (click)="addpolyLine()"><ion-icon name="add"></ion-icon>Add PolyLine</button>
 </ion-buttons> -->
-<ion-buttons>
+    <!-- <ion-buttons>
         <button ion-button (click)="showDirectionAndDuration()"><ion-icon name="add"></ion-icon>Show Direction</button>
-</ion-buttons>
-<div id="floating-panel">
-        <b>Start: </b>
-        <select id="start">
-          <option value="Mecca Mall">Mecca Mall</option>
-          <option value="Yaser Mall">Yaser Mall</option>
+</ion-buttons> -->
 
-        </select>
-        <!-- <b>End: </b>
-        <select id="end">
-          <option value="RDr. Fayez Sabri Jaber Farms">Maram's House</option>
-          <option value="Anwar Hamoudeh">Jwan's House</option>
-        </select>-->
-        </div> 
+    <div #map id="map">
 
-<div #map id="map" >
-    
-</div>
-<div id="warnings-panel"></div>
-<div class="bottom request-controls" >
-  <ion-row>
-      <ion-col width-50>
-          <button [hidden]="isRequested" block primary (click)="request()" > Request Nani</button>
-          <button id="cancel" [hidden]="!isRequested || isCanceled" block primary (click)="cancel()" > Cancel Request </button>
-      </ion-col>
-  </ion-row>
-</div>
+    </div>
+    <div id="warnings-panel"></div>
+    <div class="bottom request-controls">
+        <ion-row>
+            <ion-col width-50>
+                <button class="butt" [hidden]="isRequested" block primary (click)="request()"> Request Nani</button>
+                <button class="butt" id="cancel" [hidden]="!isRequested || isCanceled" block primary (click)="cancel()"> Cancel Request </button>
+            </ion-col>
+        </ion-row>
+    </div>
 
 </ion-content>

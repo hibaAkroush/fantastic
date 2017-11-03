@@ -12,7 +12,8 @@ import { SignUpPage } from "../pages/sign-up/sign-up";
 import {MainPage} from "../pages/main/main";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireDatabase } from 'angularfire2/database';
+// import { AngularFireDatabase } from 'angularfire2/database';
+import { Facebook } from '@ionic-native/facebook'
 
  
 
@@ -46,6 +47,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
     MainPage
   ],
   providers: [
+    Facebook,
     StatusBar,
     SplashScreen,
     Geolocation,

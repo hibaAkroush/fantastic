@@ -21,6 +21,9 @@
         <data android:host="fantastic-13633.firebaseapp.com" android:scheme="https" android:path="/__/auth/callback"/>
       </intent-filter>
     </activity>
+    <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/fb_app_name" android:name="com.facebook.FacebookActivity"/>
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id"/>
+    <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/fb_app_name"/>
   </application>
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26"/>
 </manifest>

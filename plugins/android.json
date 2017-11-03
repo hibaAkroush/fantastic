@@ -13,7 +13,25 @@
     "cordova-plugin-buildinfo": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
     "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-x-toast": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
     "cordova-universal-links-plugin": {
@@ -22,16 +40,9 @@
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-ionic-webview": {
+    "cordova-plugin-facebook4": {
+      "APP_ID": "1781691841872253",
+      "APP_NAME": "fantastic nanis",
       "PACKAGE_NAME": "io.ionic.starter"
     }
   },

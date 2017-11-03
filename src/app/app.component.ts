@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { Platform,MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -12,10 +12,10 @@ import { SignUpPage } from "../pages/sign-up/sign-up";
 })
 export class MyApp {
   rootPage: any = HomePage;
-
+  @ViewChild(Nav) nav: Nav;
   pages: Array<{ title: string, component: any }>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, public menu: MenuController, splashScreen: SplashScreen) {
 
     this.pages = [
       { title: 'HomePage', component: HomePage },
@@ -54,5 +54,6 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
 }
 

@@ -1,25 +1,28 @@
 <ion-content>
-  <button (click)="loadMainPage()" ion-button> Main Page </button>
-  <ion-card> 
-    <ion-card-header> 
-    Login
+  <!-- <button (click)="loadMainPage()" ion-button> Main Page </button> -->
+  <ion-card>
+    <ion-card-header>
+      Login
     </ion-card-header>
 
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-input type="text" [(ngModel)]="user.email" placeholder="User Email" ></ion-input>
+          <ion-input type="text" [(ngModel)]="user.email" placeholder="User Email"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-input type="password" [(ngModel)]="user.password" placeholder="Password" ></ion-input>
-          </ion-item>
-          <button ion-button (click)="login(user)">Login</button>
-          <p>OR</p>
-          <button ion-button (click)="loginWithFB()" >
-            <ion-icon name="logo-facebook" > Login With Facebook </ion-icon>
-          </button>
+          <ion-input type="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
+        </ion-item>
+        <button style="background-color:#3ebffb" ion-button (click)="login(user)">Login</button>
+        <p>OR</p>
+        <button ion-button (click)="loginWithFB()" style="background-color:#3ebffb">
+          <ion-icon name="logo-facebook"> Login With Facebook </ion-icon>
+        </button>
+        <ion-buttons>
+          <!-- <button ion-button (click)="showUserFB()"><ion-icon name="add"></ion-icon>show fb info</button> -->
+        </ion-buttons>
       </ion-list>
     </ion-card-content>
-  </ion-card>    
-  <button (click)="loadSignUp()" ion-button clear >dont have an account? press here</button>
+  </ion-card>
+  <button style="color:#3ebffb" (click)="loadSignUp()" ion-button clear>dont have an account? press here</button>
 </ion-content>
