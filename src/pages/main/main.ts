@@ -34,6 +34,7 @@ export class MainPage {
   nani;
   coordinates = {};
   nanies;
+  nearNanny = {};
 
   public isRequested: boolean;
   public isCanceled: boolean;
@@ -178,6 +179,8 @@ export class MainPage {
         avoidTolls: false
       },
       function(response, status) {
+       
+        // console.log(x.distanceInfo)
         if (status !== "OK") {
           alert("Error was: " + status);
         } else {
@@ -189,14 +192,17 @@ export class MainPage {
             var results = response.rows[i].elements;
             console.log(results);
             for (var j = 0; j < results.length; j++) {
+              // x.distanceInfo['distance'] = results[j].distance.text;
+              // x.distanceInfo['duration'] = results[j].duration.text;
               outputDiv.innerHTML +=
-                originList[i] +
-                " to " +
-                destinationList[j] +
-                ": " +
-                results[j].distance.text +
-                " in " +
-                results[j].duration.text +
+                // originList[i] +
+                // " to " +
+                // destinationList[j] +
+                // ": " +
+                "Nanny's name: " + x.nearNanny['firstName'] + "<br>"
+                + "phone no.: " + x.nearNanny['phoneNumber'] + "<br>"
+                + "distance: " + results[j].distance.text + "<br>" 
+                + "need about " + results[j].duration.text +
                 "<br>";
             }
           }
@@ -204,6 +210,7 @@ export class MainPage {
       }
     );
   }
+  
   calculateAndDisplayRoute(
     directionsDisplay,
     directionsService,
@@ -374,6 +381,11 @@ export class MainPage {
           name = key;
         }
       }
+      that.nearNanny['firstName'] = that.nani[name]['firstName'];
+      that.nearNanny['phoneNumber'] = that.nani[name]['phoneNumber'];
+      /////////////////////////////////////////////////////
+      // console.log(that.nani[name]['firstName'], that.nani[name]['phoneNumber'] ,"hellooooooooo")
+      // console.log(nani[name].lat, nani[name].lng, min);
       var currentTime = new Date(new Date().getTime()).toLocaleTimeString();
       var Uuser = this.afAuth.auth.currentUser;
       console.log(Uuser.uid,'jwan');
@@ -384,9 +396,8 @@ export class MainPage {
         start_time : currentTime
       });
       var intervalFunc = setInterval(function timer() {
-
         if(name){
-          console.log("debugg");
+        console.log("debugg");
           that.coordinates = {
             lat: that.nani[name].lat,
             lng: that.nani[name].lng
@@ -394,19 +405,19 @@ export class MainPage {
         }
         that.showDirectionAndDuration();
       }, 1000);
-
-      alert(
-        "The nearst nani:" +
-          " " +
-          name +
-          " " +
-          "It is" +
-          " " +
-          Math.floor(min * 10) +
-          " km" +
-          " " +
-          "far from you"
-      );
+      console.log("The nearst nani: " + name +" It is" + Math.floor(min * 10) + " km" + " far from you")
+      // alert(
+      //   "The nearst nani:" +
+      //     " " +
+      //     name +
+      //     " " +
+      //     "It is" +
+      //     " " +
+      //     Math.floor(min * 10) +
+      //     " km" +
+      //     " " +
+      //     "far from you"
+      // );
     });
   }
 
@@ -415,14 +426,14 @@ export class MainPage {
     this.isRequested = true;
   }
 
-  cancel() {
-    this.isRequested = false;
-    let that = this;
-    function delay() {
-      that.isCanceled = true;
-      alert("time is done");
-    }
-    setTimeout(delay, 60000);
-  }
+  // cancel() {
+  //   this.isRequested = false;
+  //   let that = this;
+  //   function delay() {
+  //     that.isCanceled = true;
+  //     alert("time is done");
+  //   }
+  //   setTimeout(delay, 60000);
+  // }
 }
 

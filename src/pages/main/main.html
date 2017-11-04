@@ -28,7 +28,7 @@
     <!-- <ion-buttons>
     <button ion-button (click)="findNani()"><ion-icon name="add"></ion-icon>Find Nani</button>
 </ion-buttons> -->
-    <div id="output"></div>
+    <!-- <div id="output"></div> -->
     <!-- <ion-buttons>
         <button ion-button (click)="addpolyLine()"><ion-icon name="add"></ion-icon>Add PolyLine</button>
 </ion-buttons> -->
@@ -43,10 +43,15 @@
     <div class="bottom request-controls">
         <ion-row>
             <ion-col width-50>
-                <button class="butt" [hidden]="isRequested" block primary (click)="request()"> Request Nani</button>
-                <button class="butt" id="cancel" [hidden]="!isRequested || isCanceled" block primary (click)="cancel()"> Cancel Request </button>
+                <button ion-button block class="butt" [hidden]="isRequested" block primary (click)="request()"> Request Nani</button>
+                <button class="butt2" id="output" [hidden]="!isRequested || isOutputed" block primary ></button>
             </ion-col>
         </ion-row>
     </div>
+    <!-- <div class="w3-container">
+        <div class="w3-bar w3-border w3-light-grey">
+                <div class="w3-bar-item" id="output"></div>
+        </div>
+    </div> -->
 
 </ion-content>
